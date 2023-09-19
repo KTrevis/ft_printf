@@ -6,7 +6,7 @@
 /*   By: ketrevis <ketrevis@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:15:58 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/09/19 14:16:34 by ketrevis         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:28:48 by ketrevis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_hexa(long int n, char c)
 	if (n > 16)
 		ft_print_hexa(n / 16, 1);
 	if (c == 'X')
-		ft_putchar_fd(ft_toupper(base[n % 16]),1);
+		ft_putchar_fd(ft_toupper(base[n % 16]), 1);
 	else
 		ft_putchar_fd(base[n % 16], 1);
 }

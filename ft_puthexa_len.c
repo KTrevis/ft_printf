@@ -15,23 +15,26 @@ static int	hex_len(int n)
 	return (len);
 }
 
-static void	ft_print_leading_f(char *str, char c)
+static int	ft_print_leading_f(char *str, char c)
 {
 	int	to_print;
-	
+	int	i;
+
+	to_print = 0;
+	i = 0;
 	if (c == 'x')
 		c = 'f';
 	else
 		c = 'F';
-	to_print = 0;
 	while (str[to_print])
 		to_print++;
 	to_print = 8 - to_print;
-	while (to_print > 0)
+	while (i < to_print)
 	{
 		ft_putchar_len(c);
-		to_print--;
+		i++;
 	}
+	return (i + 1);
 }
 
 int	ft_puthexa_len(int n, char c)
@@ -58,6 +61,7 @@ int	ft_puthexa_len(int n, char c)
 	if (c == 'X')
 		ft_uppercase_str(str);
 	if (*base == 'f')
-		ft_print_leading_f(str, c);
-	return (ft_putstr_len(str));
+		len += ft_print_leading_f(str, c);
+	len += ft_putstr_len(str);
+	return (len);
 }

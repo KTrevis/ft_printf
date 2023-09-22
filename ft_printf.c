@@ -3,6 +3,8 @@
 
 int	ft_format(char c, va_list args)
 {
+	int	arg;
+
 	if (c == 'c')
 		return (ft_putchar_len(va_arg(args, int)));
 	if (c == 's')
@@ -12,7 +14,13 @@ int	ft_format(char c, va_list args)
 	if (c == 'u')
 		return (ft_putnbr_unsigned_len(va_arg(args, unsigned int)));
 	if (c == 'x' || c == 'X')
-		return (ft_puthexa_len(va_arg(args, int), c));
+	{
+		arg = va_arg(args, int);
+		if (arg == 0) 
+			return (ft_putchar_len('0'));
+		else
+			return (ft_puthexa_len(arg, c));
+	}
 	if (c == 'p')
 		return (ft_putaddr_len(va_arg(args, void *)));
 	if (c == '%')
@@ -41,6 +49,8 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("%x\n", -42);
-	printf("%x\n", -42);
+	int len = ft_printf("%c %X %x\n", 'c', -0, -42);
+	ft_printf("%d\n", len);
+	len = printf("%c %X %x\n", 'c', -0, -42);
+	ft_printf("%d\n", len);
 }

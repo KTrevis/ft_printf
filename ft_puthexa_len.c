@@ -43,13 +43,12 @@ int	ft_puthexa_len(int n, char c)
 	char	*base;
 	int		len;
 
+	base = "0123456789abcdef";
 	if (n < 0)
 	{
 		n = (n * -1) - 1;
-		base = "fedcba9876543120";
+		base = "fedcba9876543210";
 	}
-	else
-		base = "0123456789abcdef";
 	len = hex_len(n);
 	str = malloc((len + 1) * sizeof(char));
 	str[len--] = '\0';
@@ -63,5 +62,6 @@ int	ft_puthexa_len(int n, char c)
 	if (*base == 'f')
 		len += ft_print_leading_f(str, c);
 	len += ft_putstr_len(str);
+	free(str);
 	return (len);
 }

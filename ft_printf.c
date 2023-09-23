@@ -49,8 +49,8 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	int len = ft_printf("%c %X %x\n", 'c', -0, -42);
+	int len = ft_printf("%c %X %x\n", 'c', 42, -42);
 	ft_printf("%d\n", len);
-	len = printf("%c %X %x\n", 'c', -0, -42);
+	len = printf("%c %X %x\n", 'c', 42, -42);
 	ft_printf("%d\n", len);
 }

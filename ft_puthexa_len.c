@@ -34,7 +34,7 @@ static int	ft_print_leading_f(char *str, char c)
 		ft_putchar_len(c);
 		i++;
 	}
-	return (i + 1);
+	return (i);
 }
 
 int	ft_puthexa_len(int n, char c)
@@ -63,5 +63,5 @@ int	ft_puthexa_len(int n, char c)
 		len += ft_print_leading_f(str, c);
 	len += ft_putstr_len(str);
 	free(str);
-	return (len);
+	return (len + 1);
 }

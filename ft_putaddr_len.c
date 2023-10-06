@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_puthexa_unsigned_len(uintptr_t n, char c)
 {

@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putaddr_len.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 15:08:24 by ketrevis          #+#    #+#             */
+/*   Updated: 2023/10/31 15:08:36 by ketrevis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_puthexa_unsigned_len(uintptr_t n, char c)
 {
 	static int	len;
-	char				*base;
+	char		*base;
 
 	len = 0;
 	base = "0123456789abcdef";

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 15:05:45 by ketrevis          #+#    #+#             */
+/*   Updated: 2023/10/31 15:06:18 by ketrevis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_format(char c, va_list args)
 {
@@ -16,7 +27,7 @@ int	ft_format(char c, va_list args)
 	if (c == 'x' || c == 'X')
 	{
 		arg = va_arg(args, unsigned int);
-		if (arg == 0) 
+		if (arg == 0)
 			return (ft_putchar_len('0'));
 		else
 			return (ft_puthexa_unsigned_len(arg, c));
@@ -31,7 +42,7 @@ int	ft_format(char c, va_list args)
 int	ft_printf(const char *str, ...)
 {
 	int			len;
-	va_list	args;
+	va_list		args;
 
 	len = 0;
 	va_start(args, str);
@@ -45,12 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
-}
-
-int	main(void)
-{
-	int len = ft_printf("%c %X %x %p\n", 'c', 42, -42, &len);
-	ft_printf("%d\n", len);
-	len = printf("%c %X %x %p\n", 'c', 42, -42, &len);
-	ft_printf("%d\n", len);
 }

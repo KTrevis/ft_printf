@@ -6,7 +6,7 @@
 /*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:05:45 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/10/31 15:06:18 by ketrevis         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:01:06 by ketrevis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 int	ft_format(char c, va_list args)
 {
 	unsigned int	arg;
+	unsigned int	len;
 
+	len = 0;
 	if (c == 'c')
 		return (ft_putchar_len(va_arg(args, int)));
 	if (c == 's')
 		return (ft_putstr_len(va_arg(args, char *)));
 	if (c == 'i' || c == 'd')
-		return (ft_putnbr_len(va_arg(args, int)));
+		return (ft_putnbr_len(va_arg(args, int), &len));
 	if (c == 'u')
 		return (ft_putnbr_unsigned_len(va_arg(args, unsigned int)));
 	if (c == 'x' || c == 'X')

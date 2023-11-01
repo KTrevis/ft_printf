@@ -6,7 +6,7 @@
 /*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:08:24 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/10/31 15:08:36 by ketrevis         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:34:35 by ketrevis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_puthexa_unsigned_len(uintptr_t n, char c)
 
 	len = 0;
 	base = "0123456789abcdef";
-	if (n > 16)
+	if (n >= 16)
 	{
 		ft_puthexa_unsigned_len(n / 16, c);
 	}
@@ -32,5 +32,7 @@ int	ft_puthexa_unsigned_len(uintptr_t n, char c)
 
 int	ft_putaddr_len(void *ptr)
 {
+	if (!ptr)
+		return (ft_putstr_len("(nil)"));
 	return (ft_putstr_len("0x") + ft_puthexa_unsigned_len((uintptr_t)ptr, 'x'));
 }

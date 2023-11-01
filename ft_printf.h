@@ -6,7 +6,7 @@
 /*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:07:28 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/10/31 15:09:45 by ketrevis         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:57:10 by ketrevis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int		ft_putchar_len(char c);
 int		ft_putstr_len(char *str);
-int		ft_putnbr_len(int n);
+int		ft_putnbr_len(int n, unsigned int *len);
 int		ft_putaddr_len(void *ptr);
 int		ft_puthexa_unsigned_len(uintptr_t n, char c);
 int		ft_putnbr_unsigned_len(unsigned int n);

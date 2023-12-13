@@ -6,7 +6,7 @@
 #    By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 11:23:29 by ketrevis          #+#    #+#              #
-#    Updated: 2023/10/31 14:55:57 by ketrevis         ###   ########.fr        #
+#    Updated: 2023/11/16 10:45:00 by ketrevis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@$(CC) $(CFLAGS) -c $(SRC)
-	@ar -rc $(NAME) $(OBJS)
-	@echo "Compiled $(NAME) & .o."
+	$(CC) $(CFLAGS) -c $(SRC)
+	ar -rc $(NAME) $(OBJS)
 
 clean:
-	@rm -f $(OBJS_BONUS) $(OBJS) 
-	@echo "Deleted .o files."
+	rm -f $(OBJS_BONUS) $(OBJS) 
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "Deleted $(NAME)."
+	rm -f $(NAME)
 
 re: fclean all

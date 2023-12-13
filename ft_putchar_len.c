@@ -6,7 +6,7 @@
 /*   By: ketrevis <ketrevis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:08:18 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/10/31 15:08:18 by ketrevis         ###   ########.fr       */
+/*   Updated: 2023/11/16 10:40:57 by ketrevis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_putchar_len(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	if (write(1, &c, 1) > 0)
+		return (1);
+	return (0);
 }
